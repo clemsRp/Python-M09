@@ -6,6 +6,9 @@ from enum import Enum
 
 
 class ContactType(str, Enum):
+    '''
+    Enum for the different means of communication
+    '''
     radio = "radio"
     visual = "visual"
     physical = "physical"
@@ -13,6 +16,9 @@ class ContactType(str, Enum):
 
 
 class AlienContact(BaseModel):
+    '''
+    Class that represent an alien contact
+    '''
     contact_id: str = Field(min_length=5, max_length=15)
     timestamp: datetime = Field(default_factory=lambda: datetime.now())
     location: str = Field(min_length=3, max_length=100)
